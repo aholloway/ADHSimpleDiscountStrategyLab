@@ -13,7 +13,7 @@ public class LeatherBelt extends Product {
         this.setPartName(partName);
         this.setPartNumber(partNumber);
         this.setPrice(price);
-        this.setDiscountStrategy(new Discount15Percent());
+        this.setDiscountStrategy(new Discount15PercentStrategy());
     }
     
 //    @Override

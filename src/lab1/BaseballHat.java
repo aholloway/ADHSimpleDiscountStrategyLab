@@ -13,7 +13,7 @@ public class BaseballHat extends Product {
         this.setPartName(partName);
         this.setPartNumber(partNumber);
         this.setPrice(price);
-        this.setDiscountStrategy(new Discount10Percent());
+        this.setDiscountStrategy(new Discount10PercentStrategy());
     }
     
 //    @Override

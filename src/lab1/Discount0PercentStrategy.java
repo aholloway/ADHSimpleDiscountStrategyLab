@@ -5,8 +5,8 @@ package lab1;
  *
  * @author aholloway
  */
-public class Discount15Percent implements DiscountStrategy {
+public class Discount0PercentStrategy implements DiscountStrategy {
     public double returnDiscount(){
-        return .15;
+        return 0;
     }
 }

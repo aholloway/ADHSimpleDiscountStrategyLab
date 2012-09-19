@@ -13,6 +13,8 @@ package lab1;
 public abstract class Product {
 
     private DiscountStrategy discountStrategy;
+    private static final String discountStrategyNullException="Error: Discount "
+            + "strategy may not be null.";
     private static final String UNDEFINED = "undefined";
     //private static final double DEFAULT_DISCOUNT = 0;
     private String partName;
@@ -49,7 +51,8 @@ public abstract class Product {
         return partNumber;
     }
 
-    public void setPartNumber(final String partNumber) {
+    //should be final
+    public final void setPartNumber(final String partNumber) {
         if (partNumber == null || partNumber.length() == 0) {
             this.partNumber = UNDEFINED;
         }
@@ -77,7 +80,11 @@ public abstract class Product {
     }
 
     //Allows users to change discount strategy at runtime
-    public void setDiscountStrategy(DiscountStrategy discountStrategy) {
+    public final void setDiscountStrategy(DiscountStrategy discountStrategy) {
+        //validation to prevent null values from being passed in.
+        if (discountStrategy==null){
+            throw new IllegalArgumentException(discountStrategyNullException);
+        }
         this.discountStrategy = discountStrategy;
     }
 }
