@@ -13,7 +13,7 @@ package lab1;
 public abstract class Product {
 
     private DiscountStrategy discountStrategy;
-    private static final String discountStrategyNullException="Error: Discount "
+    private static final String DISCOUNT_STRATEGY_NULL_EXCEPTION = "Error: Discount "
             + "strategy may not be null.";
     private static final String UNDEFINED = "undefined";
     //private static final double DEFAULT_DISCOUNT = 0;
@@ -31,9 +31,8 @@ public abstract class Product {
     //public double getDiscountInDollars() {
     //    return price * DEFAULT_DISCOUNT;
     //}
-    
-    public final double getDiscountInDollars(){
-        return price * discountStrategy.returnDiscount();
+    public final double getDiscountInDollars() {
+        return discountStrategy.returnDiscount(price);
     }
 
     public final String getPartName() {
@@ -43,8 +42,9 @@ public abstract class Product {
     public final void setPartName(final String partName) {
         if (partName == null || partName.length() == 0) {
             this.partName = UNDEFINED;
+        } else {
+            this.partName = partName;
         }
-        this.partName = partName;
     }
 
     public final String getPartNumber() {
@@ -55,8 +55,9 @@ public abstract class Product {
     public final void setPartNumber(final String partNumber) {
         if (partNumber == null || partNumber.length() == 0) {
             this.partNumber = UNDEFINED;
+        } else {
+            this.partNumber = partNumber;
         }
-        this.partNumber = partNumber;
     }
 
     public final String getDescription() {
@@ -75,15 +76,16 @@ public abstract class Product {
     public final void setPrice(final double price) {
         if (price < 0) {
             this.price = 0;
+        } else {
+            this.price = price;
         }
-        this.price = price;
     }
 
     //Allows users to change discount strategy at runtime
     public final void setDiscountStrategy(DiscountStrategy discountStrategy) {
         //validation to prevent null values from being passed in.
-        if (discountStrategy==null){
-            throw new IllegalArgumentException(discountStrategyNullException);
+        if (discountStrategy == null) {
+            throw new IllegalArgumentException(DISCOUNT_STRATEGY_NULL_EXCEPTION);
         }
         this.discountStrategy = discountStrategy;
     }

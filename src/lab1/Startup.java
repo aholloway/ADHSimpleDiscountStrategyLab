@@ -1,3 +1,4 @@
+
 package lab1;
 
 import java.text.NumberFormat;
@@ -29,7 +30,7 @@ public class Startup {
         System.out.println("");
         System.out.println("We changed the discounts:");
         for (Product p : products) {
-            p.setDiscountStrategy(new Discount15PercentStrategy());
+            p.setDiscountStrategy(new LowDiscountStrategyB());
             System.out.println(p.getPartNumber() + ", "
                     + p.getPartName() + ", Price: "
                     + nf.format(p.getPrice()) + ", Discount: "
@@ -47,7 +48,7 @@ public class Startup {
         System.out.println("We tried to substitue bad data into the first "
                 + "product in the array:");
         for (Product p : products) {
-            p.setDiscountStrategy(new Discount15PercentStrategy());
+            p.setDiscountStrategy(new LowDiscountStrategyB());
             System.out.println(p.getPartNumber() + ", "
                     + p.getPartName() + ", Price: "
                     + nf.format(p.getPrice()) + ", Discount: "

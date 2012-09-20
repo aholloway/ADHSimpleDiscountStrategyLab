@@ -9,5 +9,6 @@ package lab1;
  * @author aholloway
  */
 public interface DiscountStrategy {
-    double returnDiscount();
+
+    double returnDiscount(double price);
 }
