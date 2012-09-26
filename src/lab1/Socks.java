@@ -13,7 +13,7 @@ public class Socks extends Product {
         this.setPartName(partName);
         this.setPartNumber(partNumber);
         this.setPrice(price);
-        this.setDiscountStrategy(new NoDiscountStrategy());
+        this.setDiscountStrategy(new NoDiscount());
     }
     
 }

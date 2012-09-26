@@ -30,7 +30,7 @@ public class Startup {
         System.out.println("");
         System.out.println("We changed the discounts:");
         for (Product p : products) {
-            p.setDiscountStrategy(new LowDiscountStrategyB());
+            p.setDiscountStrategy(new FallSale());
             System.out.println(p.getPartNumber() + ", "
                     + p.getPartName() + ", Price: "
                     + nf.format(p.getPrice()) + ", Discount: "
@@ -48,7 +48,7 @@ public class Startup {
         System.out.println("We tried to substitue bad data into the first "
                 + "product in the array:");
         for (Product p : products) {
-            p.setDiscountStrategy(new LowDiscountStrategyB());
+            p.setDiscountStrategy(new FallSale());
             System.out.println(p.getPartNumber() + ", "
                     + p.getPartName() + ", Price: "
                     + nf.format(p.getPrice()) + ", Discount: "

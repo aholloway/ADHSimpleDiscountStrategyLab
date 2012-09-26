@@ -4,9 +4,9 @@ package lab1;
  *
  * @author aholloway
  */
-public class LowDiscountStrategyA implements DiscountStrategy {
+public class ClearanceSale implements DiscountStrategy {
 
     public double returnDiscount(double price) {
-        return .10 * price;
+        return 0.70 * price;
     }
 }
