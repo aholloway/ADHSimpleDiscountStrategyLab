@@ -1,4 +1,6 @@
-package lab1;
+package lab1.solution;
+
+import lab1.*;
 
 /**
  *
@@ -13,11 +15,12 @@ public class BaseballHat extends Product {
         this.setPartName(partName);
         this.setPartNumber(partNumber);
         this.setPrice(price);
+        this.setDiscountStrategy(new BackToSchoolSale());
     }
     
-    @Override
-    public double getDiscountInDollars() {
-        return this.getPrice() * .10;
-    }
+//    @Override
+//    public double getDiscountInDollars() {
+//        return this.getPrice() * .10;
+//    }
 
 }

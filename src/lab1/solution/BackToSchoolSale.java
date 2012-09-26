@@ -1,4 +1,6 @@
-package lab1;
+package lab1.solution;
+
+import lab1.*;
 
 /**
  *

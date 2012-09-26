@@ -1,4 +1,6 @@
-package lab1;
+package lab1.solution;
+
+import lab1.*;
 
 /**
  *
@@ -13,6 +15,7 @@ public class Socks extends Product {
         this.setPartName(partName);
         this.setPartNumber(partNumber);
         this.setPrice(price);
+        this.setDiscountStrategy(new NoDiscount());
     }
     
 }
